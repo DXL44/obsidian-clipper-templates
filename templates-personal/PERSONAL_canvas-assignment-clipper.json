@@ -1,0 +1,53 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Canvas Assignment",
+	"behavior": "create",
+	"noteContentFormat": "{{selectorHtml:[data-testid=\"assignments-2-assignment-description\"]|markdown}}",
+	"properties": [
+		{
+			"name": "course",
+			"value": "[[{{selector:#breadcrumbs > ol > :nth-child(2) > a > span}}]]",
+			"type": "text"
+		},
+		{
+			"name": "due",
+			"value": "{{published|slice:0,10|date_modify:\\\"- 1 day\\\"}}",
+			"type": "date"
+		},
+		{
+			"name": "completed?",
+			"value": "",
+			"type": "checkbox"
+		},
+		{
+			"name": "canvas link",
+			"value": "[LINK]({{url}})",
+			"type": "text"
+		},
+		{
+			"name": "work link",
+			"value": "",
+			"type": "multitext"
+		},
+		{
+			"name": "related notes",
+			"value": "",
+			"type": "multitext"
+		},
+		{
+			"name": "bases",
+			"value": "[[Assignments]]",
+			"type": "multitext"
+		},
+		{
+			"name": "cover",
+			"value": "",
+			"type": "text"
+		}
+	],
+	"triggers": [
+		"/instructure\\.com/"
+	],
+	"noteNameFormat": "{{title|replace:\"Exercise \":\"EX\",\"Homework \":\"HW\",\"Group Project \":\"GP\",\":\":\"-\"}}",
+	"path": "College/Assignments"
+}

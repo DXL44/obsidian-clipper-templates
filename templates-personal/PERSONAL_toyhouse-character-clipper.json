@@ -1,0 +1,48 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Toyhouse Character",
+	"behavior": "prepend-specific",
+	"noteContentFormat": "`VIEW[*part of: {bases}*][text(renderMarkdown)]`\n\n----\n> [!col]\n> `VIEW[{image}][image(class(profile-image))]`\n>\n>> [!col-md]\n>>> [!quote] A short quote that defines them.\n>>\n>>> [!info] Full Name\n>> pronouns, 00 y/o, gen., sex.\n>> **Occupation:** \n>> **Group Affiliation:** \n>> **Species:** \n>> \n>>> [!summary] In a nutshell...\n>> A lost woman who works in the world of dreams.\n\n----\n# Vault data\n## Alternate versions\n````base\nfilters:\n  or:\n    - file.inFolder(\"Worldbuilding/Characters/{{selector:.profile-name-info > h1}}\")\n    - parent == link(\"{{selector:.profile-name-info > h1}}\")\nviews:\n  - type: cards\n    name: Alt. versions\n    filters:\n      and:\n        - file.name != \"{{selector:.profile-name-info > h1}}\"\n    order:\n      - about\n    image: note.cover\n    cardSize: 130\n\n````\n\n## Works\n````base\nfilters:\n  and:\n    - note[\"feat. characters\"].contains(link(\"{{selector:.profile-name-info > h1}}\"))\n    - bases.contains(link(\"Works\"))\nviews:\n  - type: cards\n    name: Works\n    groupBy:\n      property: completed?\n      direction: DESC\n    sort:\n      - property: date\n        direction: DESC\n      - property: priority\n        direction: ASC\n      - property: file.name\n        direction: ASC\n    imageAspectRatio: 0.6\n    cardSize: 150\n    image: note.cover\n\n````\n## Notes and bits\n````base\nfilters:\n  and:\n    - bases.containsAny(link(\"Corkboard\"))\n    - file.hasLink(\"{{selector:.profile-name-info > h1}}\")\nviews:\n  - type: list\n    name: Works\n    order:\n      - file.name\n      - date\n    sort:\n      - property: file.name\n        direction: ASC\n    imageAspectRatio: 0.6\n    cardSize: 220\n    indentProperties: false\n\n````\n## Relevant pins\n````base\nfilters:\n  and:\n    - file.links.contains(link(\"{{selector:.profile-name-info > h1}}\"))\n    - bases.contains(link(\"Pin2rest\"))\nviews:\n  - type: cards\n    name: Pin2rest\n    order: []\n    sort:\n      - property: date\n        direction: DESC\n    imageAspectRatio: 1.4\n    cardSize: 100\n    image: note.image\n\n````\n## Journal entries\n````base\nfilters:\n  and:\n    - bases.containsAny(link(\"Dreams\"), link(\"Journal\"))\n    - file.hasLink(\"{{selector:.profile-name-info > h1}}\")\nviews:\n  - type: cards\n    name: Works\n    order:\n      - file.name\n      - mood\n    sort:\n      - property: file.name\n        direction: DESC\n    cardSize: 130\n\n````\n----\n\n# About\n\n\n## Biography\n\n\n## Personality\n\n\n## Relationships\n\n\n\n----\n",
+	"properties": [
+		{
+			"name": "about",
+			"value": "{{selector:.profile-name-info > h1|split:\\\"(\\\"|nth:2|join|slice:0,-1}}",
+			"type": "text"
+		},
+		{
+			"name": "bases",
+			"value": "[[Characters]]",
+			"type": "multitext"
+		},
+		{
+			"name": "cover",
+			"value": "{{selector:.img-thumbnail > .profile-name-icon?src|nth:2|join}}",
+			"type": "text"
+		},
+		{
+			"name": "link",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "parent",
+			"value": "{{selector:.display-character|wikilink}}",
+			"type": "text"
+		},
+		{
+			"name": "tags",
+			"value": "clipped/toyhouse, vault/unfinished",
+			"type": "multitext"
+		},
+		{
+			"name": "image",
+			"value": "",
+			"type": "text"
+		}
+	],
+	"triggers": [
+		"https://toyhou.se"
+	],
+	"noteNameFormat": "{{selector:.profile-name-info > h1}}",
+	"path": "Worldbuilding/Characters/{{selector:.display-character}}"
+}

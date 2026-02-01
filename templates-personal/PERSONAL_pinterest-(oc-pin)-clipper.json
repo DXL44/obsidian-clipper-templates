@@ -1,0 +1,43 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Pinterest (OC Pin)",
+	"behavior": "create",
+	"noteContentFormat": "`VIEW[{image}][image]`\n\n----\n\n# Related pages",
+	"properties": [
+		{
+			"name": "bases",
+			"value": "[[Pin2rest]], [[OC Pins]]",
+			"type": "multitext"
+		},
+		{
+			"name": "source",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "image",
+			"value": "{{selector:img[fetchpriority=\\\"high\\\"]?src|nth:1|join}}",
+			"type": "text"
+		},
+		{
+			"name": "tags",
+			"value": "imported/pinterest, clipped/pinterest",
+			"type": "multitext"
+		},
+		{
+			"name": "date",
+			"value": "",
+			"type": "date"
+		},
+		{
+			"name": "feat. characters",
+			"value": "",
+			"type": "multitext"
+		}
+	],
+	"triggers": [
+		"https://www.pinterest.com/"
+	],
+	"noteNameFormat": "{{selector:[itemprop=\"name\"] > h1}} - {{selector:[data-test-id=\"creator-profile-name\"] > div}}",
+	"path": "Pin2rest/OC Pins"
+}

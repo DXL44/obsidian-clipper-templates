@@ -1,0 +1,33 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Picrew",
+	"behavior": "create",
+	"noteContentFormat": "",
+	"properties": [
+		{
+			"name": "bases",
+			"value": "[[Pin2rest]], [[Picrews]]",
+			"type": "multitext"
+		},
+		{
+			"name": "source",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "cover",
+			"value": "{{selector:meta[data-hid=\\\"og:image\\\"]?content}}",
+			"type": "text"
+		},
+		{
+			"name": "tags",
+			"value": "source/clipped/picrew",
+			"type": "multitext"
+		}
+	],
+	"triggers": [
+		"https://picrew.me"
+	],
+	"noteNameFormat": "{{title}} picrew",
+	"path": "Pin2rest/Picrews/{{title}} picrew"
+}

@@ -1,0 +1,63 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Artfight Attack Outgoing",
+	"behavior": "prepend-specific",
+	"noteContentFormat": "`VIEW[{image}][image]`\n\n----\n\n> [!quote] {{selector:#attack-content > .clearfix}}\n>\n\n----",
+	"properties": [
+		{
+			"name": "about",
+			"value": "Artfight attack on {{selector:div.flex-wrap > div.col-md-6 > div.mt-3 > table.table-card > tbody > tr > td > strong > a|nth:2|join}}",
+			"type": "text"
+		},
+		{
+			"name": "bases",
+			"value": "[[Works]], [[Artwork]], [[Artfight {{selector:.profile-header-normal-status > div.mt-2|split:\\\"On: \\\"|nth:2|join|date:(\\\"YYYY\\\", \\\"D MMMM YYYY hh:mm:ss A\\\")}}]]",
+			"type": "multitext"
+		},
+		{
+			"name": "completed?",
+			"value": "true",
+			"type": "checkbox"
+		},
+		{
+			"name": "cover",
+			"value": "{{selector:img?src|nth:2|join|split:\\\"?\\\"|nth:1|join|replace:\\\"attack/\\\":\\\"attack/th_\\\"}}",
+			"type": "text"
+		},
+		{
+			"name": "date",
+			"value": "{{selector:.profile-header-normal-status > div.mt-2|split:\\\"On: \\\"|nth:2|join|date:(\\\"YYYY-MM-DD\\\", \\\"D MMMM YYYY hh:mm:ss A\\\")}}",
+			"type": "date"
+		},
+		{
+			"name": "feat. characters",
+			"value": "",
+			"type": "multitext"
+		},
+		{
+			"name": "image",
+			"value": "{{selector:img?src|nth:2|join|split:\\\"?\\\"|nth:1|join}}",
+			"type": "text"
+		},
+		{
+			"name": "link",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "tags",
+			"value": "source/clipped/artfight",
+			"type": "multitext"
+		},
+		{
+			"name": "archived?",
+			"value": "true",
+			"type": "checkbox"
+		}
+	],
+	"triggers": [
+		"https://artfight.net/attack"
+	],
+	"noteNameFormat": "{{selector:a[href*='https://artfight.net/character/'] > i|nth:1|join}} - {{selector:a[href*='https://artfight.net/attack/'] > u|nth:1|join}}",
+	"path": "Works/Artwork/Artfight/Artfight {{selector:.profile-header-normal-status > div.mt-2|split:\"On: \"|nth:2|join|date:(\"YYYY\", \"D MMMM YYYY hh:mm:ss A\")}}"
+}

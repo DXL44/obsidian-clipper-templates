@@ -1,0 +1,58 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Steam Workshop (PA)",
+	"behavior": "create",
+	"noteContentFormat": "paste level description here FUCKKK",
+	"properties": [
+		{
+			"name": "about",
+			"value": "",
+			"type": "text"
+		},
+		{
+			"name": "bases",
+			"value": "[[Works]], [[PA levels]]",
+			"type": "multitext"
+		},
+		{
+			"name": "completed?",
+			"value": "true",
+			"type": "checkbox"
+		},
+		{
+			"name": "cover",
+			"value": "{{selector:#enlarged_image_carousel?src}}",
+			"type": "text"
+		},
+		{
+			"name": "date",
+			"value": "{{selector:.detailsStatRight|nth:2|join|date:(\\\"YYYY-MM-DD\\\", \\\"MMM D, YYYY @ h:mma\\\")}}",
+			"type": "date"
+		},
+		{
+			"name": "feat. characters",
+			"value": "",
+			"type": "multitext"
+		},
+		{
+			"name": "link",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "tags",
+			"value": "source/clipped/steamworkshop, fandom/ProjectArrhythmia, songArtist/{{selector:#highlightContent|split:\\\"By\\\"|nth:2|join|split:\\\"[\\\"|nth:1|join|replace:\\\" \\\",\\\"\\\"|pascal}}",
+			"type": "multitext"
+		},
+		{
+			"name": "archived?",
+			"value": "true",
+			"type": "checkbox"
+		}
+	],
+	"triggers": [
+		"https://steamcommunity.com/"
+	],
+	"noteNameFormat": "{{title|split:\"::\"|nth:2|join}}",
+	"path": "Works/PA levels"
+}

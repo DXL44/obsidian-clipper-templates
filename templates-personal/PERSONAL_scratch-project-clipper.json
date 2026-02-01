@@ -1,0 +1,58 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Scratch project",
+	"behavior": "create",
+	"noteContentFormat": "\n<p style=\"text-align:center;\"><iframe src=\"https://turbowarp.org/{{url|slice:33,41}}/embed\" width=\"700\" height=\"400\" allowtransparency=\"true\" frameborder=\"0\" scrolling=\"no\" allowfullscreen=\"\" style=\"color-scheme: auto\"></iframe></p>\n\n----\n# Instructions\n{{selector:textarea[name=\"instructions\"]}}\n# Notes and Credits\n{{selector:textarea[name=\"description\"]}}\n\n----\n# Featured characters\n````base\nfilters:\n  and:\n    - this.file.links.contains(file)\n    - file.folder.contains(\"Characters\")\nviews:\n  - type: cards\n    name: Table\n    image: note.cover\n    imageAspectRatio: 0.6\n\n````\n\n\n",
+	"properties": [
+		{
+			"name": "about",
+			"value": "",
+			"type": "text"
+		},
+		{
+			"name": "bases",
+			"value": "[[Works]], [[Scratch]], [[Geometry Dash Episodes]]",
+			"type": "multitext"
+		},
+		{
+			"name": "completed?",
+			"value": "true",
+			"type": "checkbox"
+		},
+		{
+			"name": "cover",
+			"value": "https://uploads.scratch.mit.edu/get_image/project/{{url|slice:33,41}}_564x420.png",
+			"type": "text"
+		},
+		{
+			"name": "date",
+			"value": "{{selector:.share-date > span|date:(\\\"YYYY-MM-DD\\\", \\\"MMM DD, YYYY\\\")}}",
+			"type": "date"
+		},
+		{
+			"name": "feat. characters",
+			"value": "",
+			"type": "multitext"
+		},
+		{
+			"name": "link",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "tags",
+			"value": "source/clipped/scratch, fandom/GeometryDash",
+			"type": "multitext"
+		},
+		{
+			"name": "archived?",
+			"value": "true",
+			"type": "checkbox"
+		}
+	],
+	"triggers": [
+		"https://scratch.mit.edu"
+	],
+	"noteNameFormat": "{{title|slice:10|replace:\":\":\" -\",\"Geometry Dash Episodes\":\"GDE\"}}",
+	"path": "Works/Scratch"
+}
