@@ -1,0 +1,41 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Default",
+	"behavior": "create",
+	"noteContentFormat": "# {{url}}\n\n\n\n----\n{{content}}",
+	"properties": [
+		{
+			"name": "bases",
+			"value": "[[Corkboard]]",
+			"type": "multitext"
+		},
+		{
+			"name": "about",
+			"value": "{{description}}",
+			"type": "text"
+		},
+		{
+			"name": "date",
+			"value": "{{date}}",
+			"type": "date"
+		},
+		{
+			"name": "completed?",
+			"value": "false",
+			"type": "checkbox"
+		},
+		{
+			"name": "link",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "tags",
+			"value": "source/clipped/general",
+			"type": "multitext"
+		}
+	],
+	"triggers": [],
+	"noteNameFormat": "{{title}}",
+	"path": "Corkboard"
+}
